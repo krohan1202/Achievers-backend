@@ -26,15 +26,15 @@ app.use('/api', require('./routes/paymentRouter'));
 
 
 // Connect to mongodb
-mongoose.connect(process.env.DATABASE, {
-    useCreateIndex: true,
-    useFindAndModify: false,
+mongoose
+  .connect(process.env.DATABASE, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
-}, err =>{
-    if(err) throw err;
-    console.log('Connected to MongoDB')
-})
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(() => {
+    console.log("DB CONNECTED!!");
+  });
 
 // Razorpay Integration
 const KEY_ID = process.env.PAYMENT_KEY_ID;
