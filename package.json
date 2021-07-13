@@ -21,9 +21,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.1",
     "razorpay": "^2.0.6",
-    "shortid": "^2.2.15"
-  },
-  "devDependencies": {
+    "shortid": "^2.2.15",
     "nodemon": "^2.0.4"
   },
   "description": ""
