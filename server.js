@@ -37,12 +37,9 @@ mongoose
   });
 
 // Razorpay Integration
-const KEY_ID = process.env.PAYMENT_KEY_ID;
-const KEY_SECRET = process.env.PAYMENT_KEY_SECRET;
-
 const razorpay = new Razorpay({
-	key_id: KEY_ID,
-	key_secret: KEY_SECRET
+	key_id: process.env.PAYMENT_KEY_ID,
+	key_secret: process.env.PAYMENT_KEY_SECRET
 })
 
 app.post('/verification', (req, res) => {
