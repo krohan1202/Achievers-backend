@@ -46,10 +46,6 @@ const razorpay = new Razorpay({
 	key_secret: KEY_SECRET
 })
 
-// app.get('/logo.svg', (req, res) => {
-// 	res.sendFile(path.join(__dirname, 'logo.svg'))
-// })
-
 app.post('/verification', (req, res) => {
 	// do a validation
 	const secret = process.env.RAZ_VALIDATION_SECRET
@@ -103,31 +99,6 @@ app.post("/sendTotal", (req, res) => {
 		}
 	})
 })
-
-// app.post('/razorpay', async (req, res) => {
-// 	const payment_capture = 1
-// 	const amount = 60
-// 	const currency = 'INR'
-
-// 	const options = {
-// 		amount: (amount * 100),
-// 		currency,
-// 		receipt: shortid.generate(),
-// 		payment_capture
-// 	}
-	
-// 	try {
-// 		const response = await razorpay.orders.create(options)
-// 		console.log(response)
-// 		res.json({
-// 			id: response.id,
-// 			currency: response.currency,
-// 			amount: response.amount
-// 		})
-// 	} catch (error) {
-// 		console.log(error)
-// 	}
-// })
 
 app.get('/',(req,res) => {
 	return res.send('Route Working.');
