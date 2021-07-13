@@ -26,8 +26,7 @@ app.use('/api', require('./routes/paymentRouter'));
 
 
 // Connect to mongodb
-const URI = process.env.MONGODB_URL
-mongoose.connect(URI, {
+mongoose.connect(process.env.DATABASE, {
     useCreateIndex: true,
     useFindAndModify: false,
     useNewUrlParser: true,
@@ -105,5 +104,5 @@ app.get('/',(req,res) => {
 });
 
 app.listen(process.env.PORT || 5000, () =>{
-    console.log('Server is running on port', PORT);
+    console.log('Server is running on port');
 })
