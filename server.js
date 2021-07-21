@@ -24,13 +24,13 @@ app.use('/api', require('./routes/upload'));
 app.use('/api', require('./routes/productRouter'));
 app.use('/api', require('./routes/paymentRouter'));
 
-
 // Connect to mongodb
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+	useFindAndModify: false
   })
   .then(() => {
     console.log("DB CONNECTED!!");
